@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.xtext.org/example/userstory/UserStory"
+			class = "org.xtext.example.userstory.userStory.UserStoryPackage"
+			genModel = "model/generated/UserStory.genmodel" />
+	</extension>
+</plugin>

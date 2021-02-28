@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bpmn" nsURI="http://www.example.org/bpmn" nsPrefix="bpmn">
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Object">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pool" upperBound="-1" eType="#//Pool"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SousProcess" eSuperTypes="#//DataObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GateWay" abstract="true" eSuperTypes="#//Activity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubProcess" eSuperTypes="#//Process">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Ref_SubProcess" upperBound="-1"
+        eType="#//Process" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" abstract="true" eSuperTypes="#//Object">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" upperBound="-1" eType="#//SequenceFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frommessageflow" upperBound="-1"
+        eType="#//MessageFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Artifacts" eSuperTypes="#//Object">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ArtifactType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pool" eSuperTypes="#//Object">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        upperBound="-1" eType="#//Activity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowobject" upperBound="-1"
+        eType="#//FlowObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowObject" abstract="true" eSuperTypes="#//Object"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Object" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//Activity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EventType"
+        defaultValueLiteral="start"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parallel" eSuperTypes="#//Split"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//Split"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XOR" eSuperTypes="#//Split"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataObject" eSuperTypes="#//Artifacts"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextAnnotation" eSuperTypes="#//Artifacts"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Join" eSuperTypes="#//GateWay"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Split" eSuperTypes="#//GateWay"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="EventType">
+    <eLiterals name="start"/>
+    <eLiterals name="intermediate" value="1"/>
+    <eLiterals name="end" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceFlow" eSuperTypes="#//FlowObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" upperBound="-1" eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageFlow" eSuperTypes="#//FlowObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toactivity" upperBound="-1"
+        eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAssociation" eSuperTypes="#//FlowObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Activity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
+        eType="#//Artifacts" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStore" eSuperTypes="#//Artifacts"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ArtifactType">
+    <eLiterals name="DataObject"/>
+    <eLiterals name="DataStore" value="1"/>
+    <eLiterals name="Textannotation" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

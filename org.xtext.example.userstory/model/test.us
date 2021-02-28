@@ -1,0 +1,8 @@
+'back'
+User story : 1 As a 'customer' I want to be able to  1 'start' 
+User story : 2 As a 'customer' I want to be able to  2 0 'selectTravel' 
+User story : 3 As a 'customer' I want to be able to  3 'confirmInterest' 
+User story : 4 As a 'customer' I want to be able to  4 'end' 
+User story : 5 As a 'organization' I want to be able to  1 0 'start'  Scenario: coming from selectTravel
+User story : 6 As a 'organization' I want to be able to  2 'indicate price'
+User story : 7 As a 'organization' I want to be able to  3 'end'  

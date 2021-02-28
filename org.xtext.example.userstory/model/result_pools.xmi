@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.example.org/bpmn" xmlns:userStory="http://www.xtext.org/example/userstory/UserStory" xsi:schemaLocation="http://www.example.org/bpmn ../../ma.ensias.bpmn/model/bpmn.ecore http://www.xtext.org/example/userstory/UserStory generated/UserStory.ecore">
+  <userStory:Backlog name="back">
+    <backlog id="1">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usEvent" id="1" name="start"/>
+    </backlog>
+    <backlog id="2">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usTask" id="2" name="selectTravel"/>
+    </backlog>
+    <backlog id="3">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usTask" id="3" name="confirmInterest"/>
+    </backlog>
+    <backlog id="4">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usEvent" id="4" name="end" type="2"/>
+    </backlog>
+    <backlog id="5" activity1="/0/@backlog.1/@activity">
+      <role name="organization"/>
+      <activity xsi:type="userStory:usTask" id="1" name="start"/>
+    </backlog>
+    <backlog id="6">
+      <role name="organization"/>
+      <activity xsi:type="userStory:usTask" id="2" name="indicate price"/>
+    </backlog>
+    <backlog id="7">
+      <role name="organization"/>
+      <activity xsi:type="userStory:usEvent" id="3" name="end" type="2"/>
+    </backlog>
+  </userStory:Backlog>
+  <bpmn:Process name="back">
+    <pool name="organization"/>
+    <pool name="customer"/>
+  </bpmn:Process>
+</xmi:XMI>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ma.ensias.bpmn/src" modelPluginID="ma.ensias.bpmn"
+    modelName="Bpmn" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>bpmn.ecore</foreignModel>
+  <genPackages prefix="Bpmn" disposableProviderFactory="true" ecorePackage="bpmn.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bpmn.ecore#//EventType">
+      <genEnumLiterals ecoreEnumLiteral="bpmn.ecore#//EventType/start"/>
+      <genEnumLiterals ecoreEnumLiteral="bpmn.ecore#//EventType/intermediate"/>
+      <genEnumLiterals ecoreEnumLiteral="bpmn.ecore#//EventType/end"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bpmn.ecore#//ArtifactType">
+      <genEnumLiterals ecoreEnumLiteral="bpmn.ecore#//ArtifactType/DataObject"/>
+      <genEnumLiterals ecoreEnumLiteral="bpmn.ecore#//ArtifactType/DataStore"/>
+      <genEnumLiterals ecoreEnumLiteral="bpmn.ecore#//ArtifactType/Textannotation"/>
+    </genEnums>
+    <genClasses ecoreClass="bpmn.ecore#//Process">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//Process/pool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//Process/subprocess"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//SousProcess"/>
+    <genClasses image="false" ecoreClass="bpmn.ecore#//GateWay"/>
+    <genClasses ecoreClass="bpmn.ecore#//SubProcess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//SubProcess/Ref_SubProcess"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="bpmn.ecore#//Activity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpmn.ecore#//Activity/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpmn.ecore#//Activity/frommessageflow"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//Artifacts">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpmn.ecore#//Artifacts/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//Pool">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//Pool/activity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//Pool/flowobject"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//FlowObject"/>
+    <genClasses image="false" ecoreClass="bpmn.ecore#//Object">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpmn.ecore#//Object/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpmn.ecore#//Object/name"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpmn.ecore#//Event/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//Parallel"/>
+    <genClasses ecoreClass="bpmn.ecore#//OR"/>
+    <genClasses ecoreClass="bpmn.ecore#//XOR"/>
+    <genClasses ecoreClass="bpmn.ecore#//DataObject"/>
+    <genClasses ecoreClass="bpmn.ecore#//TextAnnotation"/>
+    <genClasses ecoreClass="bpmn.ecore#//Join"/>
+    <genClasses ecoreClass="bpmn.ecore#//Split"/>
+    <genClasses ecoreClass="bpmn.ecore#//SequenceFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpmn.ecore#//SequenceFlow/to"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//MessageFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpmn.ecore#//MessageFlow/toactivity"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//DataAssociation"/>
+    <genClasses ecoreClass="bpmn.ecore#//Task">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//Task/artifacts"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//DataStore"/>
+  </genPackages>
+</genmodel:GenModel>

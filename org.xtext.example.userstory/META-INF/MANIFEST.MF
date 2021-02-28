@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.example.userstory
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.userstory
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.userstory; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.example.userstory.services,
+ org.xtext.example.userstory.scoping,
+ org.xtext.example.userstory.generator,
+ org.xtext.example.userstory.validation,
+ org.xtext.example.userstory.parser.antlr.internal,
+ org.xtext.example.userstory.userStory.util,
+ org.xtext.example.userstory,
+ org.xtext.example.userstory.serializer,
+ org.xtext.example.userstory.userStory,
+ org.xtext.example.userstory.parser.antlr,
+ org.xtext.example.userstory.userStory.impl
+Import-Package: org.apache.log4j
